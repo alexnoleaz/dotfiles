@@ -14,8 +14,11 @@ function run {
 
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
+#autostart ArcoLinux Welcome App
+#run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
+
 #set wallpaper
-feh --bg-fill ~/Wallpapers/archlinux/undefined\ -\ Imgur.png &
+feh --bg-fill ~/Wallpapers/archlinux/wallpaper.png &
 #start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 

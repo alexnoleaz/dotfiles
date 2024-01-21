@@ -1,5 +1,8 @@
 from libqtile import widget
 from .theme import colors
+import subprocess
+
+# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 def base(fg='text', bg='dark'): 
     return {
@@ -59,65 +62,69 @@ def workspaces():
         separator(),
     ]
 
+def get_distro_icon():
+    try:
+        output = subprocess.check_output(['lsb_release', '-si'], text=True).strip().lower()
+        distro_icons = {
+            'arch': ' ', # Icon: nf-linux-archlinux
+            'arcolinux': ' ', # Icon: nf-linux-arcolinux
+            'ubuntu': ' ', # Icon: nf-linux-ubuntu
+            'debian': ' ', # Icon: nf-linux-debian
+            'fedora': ' ', # Icon: nf-linux-fedora
+            'opensuse': ' ', # Icon: nf-linux-opensuse
+            'centos': ' ', # Icon: nf-linux-centos
+            'linuxmint': ' ', # Icon: nf-linux-linuxmint
+            'elementary': ' ', # Icon: nf-linux-elementary
+            'manjarolinux': ' ', # Icon: nf-linux-manjaro
+            'parrot': ' ', # Icon: nf-linux-parrot
+            'kali': ' ', # Icon: nf-linux-kali_linux
+        }
+
+        return distro_icons.get(output, ' ') # Icon: nf-cod-terminal_linux
+    except subprocess.CalledProcessError:
+        return ' ' # Icon: nf-cod-terminal_linux
+
+print(get_distro_icon())
 
 primary_widgets = [
     *workspaces(),
-
     separator(),
-
     powerline('color4', 'dark'),
-
     icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
     widget.CheckUpdates(
         background=colors['color4'],
         colour_have_updates=colors['text'],
         colour_no_updates=colors['text'],
         no_update_string='0',
         display_format='{updates}',
-        update_interval=1800,
+        update_interval=1000,
         custom_command='checkupdates',
     ),
-
     powerline('color3', 'color4'),
-
     icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
-
+    widget.Net(**base(bg='color3'), interface='enp0s3'),
     powerline('color2', 'color3'),
-
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-
     widget.CurrentLayout(**base(bg='color2'), padding=5),
-
     powerline('color1', 'color2'),
-
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
+    icon(bg="color1", fontsize=17, text='󰃰 '), # Icon: nf-md-calendar_clock
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
-
     powerline('dark', 'color1'),
-
-    widget.Systray(background=colors['dark'], padding=5),
+    widget.Systray(background=colors['dark'], padding=3),
+    icon(bg='dark', fg='black', text=get_distro_icon(), fontsize=18)
 ]
 
 secondary_widgets = [
     *workspaces(),
-
     separator(),
-
     powerline('color1', 'dark'),
-
     widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-
     widget.CurrentLayout(**base(bg='color1'), padding=5),
-
     powerline('color2', 'color1'),
-
     widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
+    icon(bg='color2', text=get_distro_icon(), fontsize=18)
 
-    powerline('dark', 'color2'),
+    #powerline('dark', 'color2'),
 ]
 
 widget_defaults = {

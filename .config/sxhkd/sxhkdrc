@@ -11,9 +11,9 @@
 # SUPER + ... KEYS
 #################################################################
 
-#Thunar
+#ranger
 super + e
-	thunar
+	alacritty -e ranger
 
 #Browser
 super + b
@@ -24,8 +24,8 @@ super + x
     archlinux-logout
 
 #Rofi theme selector
-super + r
-    rofi-theme-selector
+#super + r
+#    rofi-theme-selector
 
 super + m
 	rofi -show drun
@@ -45,6 +45,10 @@ super + Return
 #################################################################
 
 #Keyboard dependent
+
+# Thunar
+super + shift + e
+	thunar
 
 #Rofi
 super + d
@@ -99,8 +103,8 @@ alt + Tab
 #################################################################
 
 #Xcfe4-TaskManager
-ctrl + shift + Escape
-    xfce4-taskmanager
+#ctrl + shift + Escape
+#    xfce4-taskmanager
 
 #################################################################
 #     SCREENSHOTS

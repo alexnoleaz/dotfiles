@@ -1,5 +1,4 @@
 
-from genericpath import isfile
 from libqtile import hook
 from libqtile import qtile
 
@@ -13,7 +12,6 @@ from settings.path import qtile_path
 
 from os import path
 import subprocess
-import json
 
 @hook.subscribe.client_new
 def new_client(window):
@@ -36,5 +34,5 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 auto_fullscreen = True
-focus_on_window_activation = 'smart' # or focus
-wmname = 'LG3D'
+focus_on_window_activation = 'smart' # smart or focus
+wmname = 'Qtile'
