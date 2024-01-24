@@ -62,30 +62,6 @@ def workspaces():
         separator(),
     ]
 
-def get_distro_icon():
-    try:
-        output = subprocess.check_output(['lsb_release', '-si'], text=True).strip().lower()
-        distro_icons = {
-            'arch': ' ', # Icon: nf-linux-archlinux
-            'arcolinux': ' ', # Icon: nf-linux-arcolinux
-            'ubuntu': ' ', # Icon: nf-linux-ubuntu
-            'debian': ' ', # Icon: nf-linux-debian
-            'fedora': ' ', # Icon: nf-linux-fedora
-            'opensuse': ' ', # Icon: nf-linux-opensuse
-            'centos': ' ', # Icon: nf-linux-centos
-            'linuxmint': ' ', # Icon: nf-linux-linuxmint
-            'elementary': ' ', # Icon: nf-linux-elementary
-            'manjarolinux': ' ', # Icon: nf-linux-manjaro
-            'parrot': ' ', # Icon: nf-linux-parrot
-            'kali': ' ', # Icon: nf-linux-kali_linux
-        }
-
-        return distro_icons.get(output, ' ') # Icon: nf-cod-terminal_linux
-    except subprocess.CalledProcessError:
-        return ' ' # Icon: nf-cod-terminal_linux
-
-print(get_distro_icon())
-
 primary_widgets = [
     *workspaces(),
     separator(),
@@ -111,7 +87,6 @@ primary_widgets = [
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
     powerline('dark', 'color1'),
     widget.Systray(background=colors['dark'], padding=3),
-    icon(bg='dark', fg='black', text=get_distro_icon(), fontsize=18)
 ]
 
 secondary_widgets = [
@@ -122,8 +97,6 @@ secondary_widgets = [
     widget.CurrentLayout(**base(bg='color1'), padding=5),
     powerline('color2', 'color1'),
     widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
-    icon(bg='color2', text=get_distro_icon(), fontsize=18)
-
     #powerline('dark', 'color2'),
 ]
 

@@ -18,7 +18,7 @@ keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 #run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 #set wallpaper
-feh --bg-fill ~/Wallpapers/archlinux/wallpaper.png &
+feh --bg-fill ~/Imágenes/Wallpapers/archlinux/wallpaper.png &
 #start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 
@@ -30,9 +30,9 @@ run nm-applet &
 #run xfce4-power-manager &
 numlockx on &
 #blueberry-tray &
-picom --config $HOME/.config/picom.conf &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
+picom --config $HOME/.config/picom/picom.conf &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
 #run cbatticon -u 5 &

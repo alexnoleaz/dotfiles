@@ -12,7 +12,7 @@ keys = [
 # SUPER + FUNCTION KEYS 
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "w", lazy.window.kill()),
-    Key([mod], "Return", lazy.spawm(terminal)),
+    Key(["mod4"], "Return", lazy.spawn(terminal)),
 
 # SUPER + CONTROL KEYS
     Key([mod, "control"], "r", lazy.restart()),
