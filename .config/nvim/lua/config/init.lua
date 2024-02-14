@@ -1,76 +1,75 @@
 local M = {}
 local defaults = {
-  enable_git_bash = false,
   colorscheme = function()
     require("tokyonight").load()
   end,
   defaults = {
     autocmds = true,
     keymaps = true,
-    lazy = true
+    lazy = true,
   },
   icons = {
     misc = {
       dots = "󰇘",
     },
     dap = {
-      Stopped             = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
-      Breakpoint          = " ",
+      Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
+      Breakpoint = " ",
       BreakpointCondition = " ",
-      BreakpointRejected  = { " ", "DiagnosticError" },
-      LogPoint            = ".>",
+      BreakpointRejected = { " ", "DiagnosticError" },
+      LogPoint = ".>",
     },
     diagnostics = {
       Error = " ",
-      Warn  = " ",
-      Hint  = " ",
-      Info  = " ",
+      Warn = " ",
+      Hint = " ",
+      Info = " ",
     },
     git = {
-      added    = " ",
+      added = " ",
       modified = " ",
-      removed  = " ",
+      removed = " ",
     },
     kinds = {
-      Array         = " ",
-      Boolean       = "󰨙 ",
-      Class         = " ",
-      Codeium       = "󰘦 ",
-      Color         = " ",
-      Control       = " ",
-      Collapsed     = " ",
-      Constant      = "󰏿 ",
-      Constructor   = " ",
-      Copilot       = " ",
-      Enum          = " ",
-      EnumMember    = " ",
-      Event         = " ",
-      Field         = " ",
-      File          = " ",
-      Folder        = " ",
-      Function      = "󰊕 ",
-      Interface     = " ",
-      Key           = " ",
-      Keyword       = " ",
-      Method        = "󰊕 ",
-      Module        = " ",
-      Namespace     = "󰦮 ",
-      Null          = " ",
-      Number        = "󰎠 ",
-      Object        = " ",
-      Operator      = " ",
-      Package       = " ",
-      Property      = " ",
-      Reference     = " ",
-      Snippet       = " ",
-      String        = " ",
-      Struct        = "󰆼 ",
-      TabNine       = "󰏚 ",
-      Text          = " ",
+      Array = " ",
+      Boolean = "󰨙 ",
+      Class = " ",
+      Codeium = "󰘦 ",
+      Color = " ",
+      Control = " ",
+      Collapsed = " ",
+      Constant = "󰏿 ",
+      Constructor = " ",
+      Copilot = " ",
+      Enum = " ",
+      EnumMember = " ",
+      Event = " ",
+      Field = " ",
+      File = " ",
+      Folder = " ",
+      Function = "󰊕 ",
+      Interface = " ",
+      Key = " ",
+      Keyword = " ",
+      Method = "󰊕 ",
+      Module = " ",
+      Namespace = "󰦮 ",
+      Null = " ",
+      Number = "󰎠 ",
+      Object = " ",
+      Operator = " ",
+      Package = " ",
+      Property = " ",
+      Reference = " ",
+      Snippet = " ",
+      String = " ",
+      Struct = "󰆼 ",
+      TabNine = "󰏚 ",
+      Text = " ",
       TypeParameter = " ",
-      Unit          = " ",
-      Value         = " ",
-      Variable      = "󰀫 ",
+      Unit = " ",
+      Value = " ",
+      Variable = "󰀫 ",
     },
   },
   kind_filter = {
@@ -115,15 +114,10 @@ local options
 function M.setup(opts)
   options = vim.tbl_deep_extend("force", defaults, opts or {}) or {}
 
-  if M.enable_git_bash then
-    vim.cmd[[ let &shell = '"C:/Program Files/Git/bin/bash.exe"' ]]
-    vim.cmd[[ let &shellcmdflag = '-s' ]]
-  end
-
   M.load("lazy")
   M.load("autocmds")
   M.load("keymaps")
-  
+
   local Util = require("util")
   Util.format.setup()
   Util.root.setup()

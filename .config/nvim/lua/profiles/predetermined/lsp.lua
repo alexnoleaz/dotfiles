@@ -22,21 +22,6 @@ local function get()
       { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
-      {
-        "<leader>cA",
-        function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = {
-                "source",
-              },
-              diagnostics = {},
-            },
-          })
-        end,
-        desc = "Source Action",
-        has = "codeAction",
-      }
     }
   if require("util").has("inc-rename.nvim") then
     _keys[#_keys + 1] = {

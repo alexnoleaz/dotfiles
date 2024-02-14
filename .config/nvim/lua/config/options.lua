@@ -82,3 +82,8 @@ vim.o.formatexpr = "v:lua.require'util'.format.formatexpr()"
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+if vim.o.shell == '"C:\\Program Files\\Git\\usr\\bin\\bash.exe"' then
+  vim.o.shell = "C:/Program Files/Git/bin/bash.exe"
+  vim.o.shellcmdflag = "-s"
+end

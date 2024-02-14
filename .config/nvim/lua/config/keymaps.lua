@@ -46,7 +46,7 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- better indenting
-map("v","<tab>", ">gv")
+map("v", "<tab>", ">gv")
 map("v", "<S-tab>", "<gv")
 
 -- formatting
@@ -55,6 +55,11 @@ map({ "n", "v" }, "<M-S-F>", function()
 end, { desc = "Format" })
 
 -- quit
-map({ "n", "t" }, "<leader>w", "<cmd>close<cr>", { desc = "Close window" })
 map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit all" })
 
+-- Terminal Mappings
+map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+map("t", "<leader>h", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
+map("t", "<leader>j", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
+map("t", "<leader>k", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
+map("t", "<leader>l", "<cmd>wincmd l<cr>", { desc = "Go to right window" })

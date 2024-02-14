@@ -1,3 +1,3 @@
 require("config").setup({
-	enable_git_bash = true,
+  enable_git_bash = false,
 })
