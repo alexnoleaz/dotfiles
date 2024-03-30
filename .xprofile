@@ -1,0 +1,50 @@
+# copied, and edited, from ~/.profile
+# used for graphical sessions
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+function run {
+  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null;
+  then
+    $@&
+  fi
+}
+
+keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
+
+#autostart ArcoLinux Welcome App
+#run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
+
+#set wallpaper
+feh --bg-fill ~/Imágenes/Wallpapers/archlinux/wallpaper.png &
+#start sxhkd to replace Qtile native key-bindings
+run sxhkd -c ~/.config/sxhkd/sxhkdrc &
+
+
+#starting utility applications at boot time
+#run variety &
+run nm-applet &
+#run pamac-tray &
+#run xfce4-power-manager &
+numlockx on &
+#blueberry-tray &
+picom --config $HOME/.config/picom/picom.conf &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#starting user applications at boot time
+#run cbatticon -u 5 &
+#run volumeicon &
+#run discord &
+#nitrogen --restore &
+#run caffeine -a &
+#run vivaldi-stable &
+#run firefox &
+#run thunar &
+#run dropbox &
+#run insync start &
+#run spotify &
+#run atom &
+#run telegram-desktop &

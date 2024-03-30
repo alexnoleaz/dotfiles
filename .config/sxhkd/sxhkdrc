@@ -1,0 +1,222 @@
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM
+#################################################################
+
+#################################################################
+# SUPER + FUNCTION KEYS
+#################################################################
+
+
+#################################################################
+# SUPER + ... KEYS
+#################################################################
+
+#ranger
+super + e
+	alacritty -e ranger
+
+#Browser
+super + b
+    firefox
+
+#archlinux-logout
+super + x
+    archlinux-logout
+
+#Rofi theme selector
+#super + r
+#    rofi-theme-selector
+
+super + m
+	rofi -show drun
+
+#Pavucontrol
+super + v
+    pavucontrol
+
+#alacritty
+#super + Return
+#    alacritty
+
+#Keyboard dependent
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#Keyboard dependent
+
+# Thunar
+super + shift + e
+	thunar
+
+#Rofi
+super + d
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher2.rasi
+
+#Rofi window
+#super + shift + m
+#    rofi -show window
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+#Keyboard dependent
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#arcolinux-welcome-app
+#ctrl + alt + w
+#     arcolinux-welcome-app
+
+#archlinux-tweak-tool
+#ctrl + alt + e
+#    archlinux-tweak-tool
+
+#Xfce4-settings-manager
+#ctrl + alt + m
+#     xfce4-settings-manager
+
+#Keyboard dependent
+
+#################################################################
+# ALT + ... KEYS
+#################################################################
+
+#Xfce4-appfinder
+#alt + F2
+#    xfce4-appfinder --collapsed
+
+#Xfce4-appfinder
+#alt + F3
+#    xfce4-appfinder
+
+#Rofi Window
+alt + Tab
+    rofi -show window
+
+#################################################################
+# CONTROL + SHIFT KEYS
+#################################################################
+
+#Xcfe4-TaskManager
+ctrl + shift + Escape
+	alacritty -e htop    
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
+
+#Scrot
+#Print
+#    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+#Raises volume
+XF86AudioRaiseVolume
+    pamixer --increase 5
+
+#Lowers volume
+XF86AudioLowerVolume
+    pamixer --decrease 5
+
+#Mute
+XF86AudioMute
+    pamixer --toggle-mute
+
+#Playerctl works for Pragha, Spotify and others
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
+
+#PLAY
+XF86AudioPlay
+    pamixer -- play-pause
+
+#Next
+XF86AudioNext
+    pamixer --next
+
+#previous
+XF86AudioPrev
+    pamixer --previous
+
+#Stop
+XF86AudioStop
+    pamixer --stop
+
+#Brightness up
+XF86MonBrightnessUp
+    brightnessctl set +10%
+
+#Brightness down
+XF86MonBrightnessDown
+    brightnessctl set -10%
+
+#########################
+#        POLYBAR        #
+#########################
+
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+
+#################################################################
+# SUPER + KEYS
+#################################################################
+
+
+#################################################################
+# SUPER KEYS
+#################################################################
+
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+
+
+#################################################################
+# SUPER + ALT KEYS
+#################################################################
+
+
+##################################
+## The RESIZE KEYS ARE RESERVED ##
+##  ~/.config/qtile/config.py   ##
+##      Lines 191 - 235         ##
+##################################
+## RESIZE UP, DOWN, LEFT, RIGHT ##
+#super + control + l
+#super + control + Right
+#super + control + h
+#super + control + Left
+#super + control + k
+#super + control + Up
+#super + control + j
+#super + control + Down
+##################################
