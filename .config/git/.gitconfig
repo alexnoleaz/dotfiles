@@ -1,0 +1,40 @@
+[user]
+  name = Alexander Nole
+
+[core]
+  autocrlf = false
+  eol = lf
+  pager = delta
+
+[color]
+  ui = true
+
+[alias]
+  st = status -sb
+  co = checkout
+  c = commit --short
+  ci = commit --short
+  p = push
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short
+
+[interactive]
+  diffFilter = delta --color-only
+
+[include]
+  path = ~/.config/git/themes/tokyonight_night.gitconfig
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = false
+  line-numbers = true
+  syntax-theme = tokyonight_night
+
+[init]
+  defaultBranch = main
+
+[diff]
+  colorMoved = default
+
+[merge]
+  conflictstyle = diff3
