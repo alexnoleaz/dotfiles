@@ -146,7 +146,7 @@ XF86AudioMute
 
 #PLAY
 XF86AudioPlay
-    pamixer -- play-pause
+    pamixer --play-pause
 
 #Next
 XF86AudioNext
