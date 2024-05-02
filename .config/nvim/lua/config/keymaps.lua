@@ -115,10 +115,10 @@ set("n", "<leader><Up>", "<C-w>k", { desc = "Go to upper window", remap = true }
 set("n", "<leader><Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Resize window
-set("n", "<leader><C-k>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-set("n", "<leader><C-j>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-set("n", "<leader><C-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-set("n", "<leader><C-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+set("n", "<leader><C-k>", "<cmd>resize +5<cr>", { desc = "Increase window height" })
+set("n", "<leader><C-j>", "<cmd>resize -5<cr>", { desc = "Decrease window height" })
+set("n", "<leader><C-h>", "<cmd>vertical resize -5<cr>", { desc = "Decrease window width" })
+set("n", "<leader><C-l>", "<cmd>vertical resize +5<cr>", { desc = "Increase window width" })
 
 set("n", "<leader><C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 set("n", "<leader><C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })

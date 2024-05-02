@@ -22,7 +22,7 @@ opt.backspace = { "start", "eol", "indent" }
 opt.path:append({ "**" })
 opt.wildignore:append({ "*/node_modules/*" })
 opt.splitkeep = "cursor"
--- opt.mouse = ""
+opt.mouse = ""
 opt.wrap = true
 opt.swapfile = false
 opt.formatoptions:append({ "r" })
