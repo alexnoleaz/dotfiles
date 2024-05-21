@@ -1,5 +1,6 @@
 [user]
   name = Alexander Nole
+  email = alexander.nole@grupoconsultic.com.mx
 
 [core]
   autocrlf = false
@@ -38,3 +39,15 @@
 
 [merge]
   conflictstyle = diff3
+
+[github]
+  user = alexnoleaz31
+
+[credential]
+  helper = cache
+
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+  helper = !/usr/bin/gh auth git-credential

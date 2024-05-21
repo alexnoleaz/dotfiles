@@ -193,6 +193,7 @@ function_depends()  {
 alias depends='function_depends'
 
 #fix obvious typo's
+alias cd='z'
 alias cd..='cd ..'
 alias pdw='pwd'
 alias udpate='sudo pacman -Syyu'
@@ -557,6 +558,37 @@ alias cat='bat'
 # Starship
 eval "$(starship init zsh)"
 
+# Fzf
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_OPTS="
+  --height 40%
+  --layout=reverse
+  --color=fg:#c0caf5,hl:#ff9e64
+  --color=fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64
+  --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
+  --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a
+"
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(hidden|)'
+"
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}'
+  --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'
+"
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'
+"
+
+#Zoxide
+eval "$(zoxide init zsh)"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
